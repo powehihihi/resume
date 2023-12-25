@@ -1,0 +1,85 @@
+contact: 
+  name: Roman Polyakov
+  mobile:
+  mail: powehi@duck.com
+  telegram: powehihihi
+  linkedin: 
+  github: powehihihi
+  website: 
+summary: 
+education:
+  - name: Moscow State University
+    url: https://msu.ru
+    degree: Bachelor of Mathematics and Mechanics
+    location: Moscow, Russia
+    duration: 2021 - Present
+experience:
+  - company: 
+      name: Cloud.ru (SberCloud)
+      url: https://cloud.ru
+      location: 
+    roles:
+      - team: Devplatform
+        position: Software Engineer
+        duration: April 2023 - Present
+        tags:
+          - Golang
+          - PostgreSQL
+          - Kafka
+          - grpc
+        summary:
+          - Accelerated the development of platform services by creating and maintaining library for interaction with internal CMDB. 
+          - Developed API management service for simplifying cross-team collaboration.
+          - Automated customers' interaction with technical support by creating telegram bot. Implemented complex FSM and covered it with tests.
+      - team: DSWorks
+        position: Software Engineer
+        duration: July 2023 - September 2023
+        tags:
+          - Golang
+          - TypeScript
+          - GraphQL 
+          - Hasura
+          - PostgreSQL
+        summary:
+          - Maintained a complex monolithic application with over 200 database migrations.
+          - Used Hasura GraphQL engine to speed up feature delievery.
+          - Wrote automated integration tests using database fixtures and a custom testing framework.
+projects:
+  - name: jobleaf
+    url: https://github.com/powehihihi/jobleaf
+    tags:
+      - Golang
+      - Latex
+    summary:
+      - jobleaf is a cli tool that simplifies writing your resume.
+      - Adapted latex resume for golang template syntax.
+      - Added support for Windows, Mac and Linux.
+      - Latex code for this resume is generated.
+  - name: enumarr 
+    url: https://github.com/powehihihi/enumarr
+    duration:
+    tags:
+      - Golang
+      - AST
+    summary:
+      - enumarr is a Stringer-like code generation tool, it generates array of typed constants (enums).
+      - Implemented abstract syntax tree traversal for finding suitable constants.
+      - Used enumarr at work for maintaining relevance of state machine tests.
+skills:
+  languages:
+    - Golang
+    - Python
+    - C/C++
+    - Lua
+    - TypeScript
+  libraries:
+    - HTMX
+    - Gorm
+    - spf13/cobra
+  tools:
+    - PostgreSQL
+    - Hasura
+    - Docker
+    - Neovim
+    - lazygit
+

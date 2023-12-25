@@ -1,0 +1,332 @@
+
+
+  
+
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj + some brand new features from Mary Feofanova + some changes by Muhammadjon Hakimov + go templates compatibility by Roman Polyakov =D
+% Sourabh's: https://github.com/sb2nov/resume
+% Mary's: https://github.com/mary3000/resume
+% Muhammadjon's: https://github.com/mrhakimov/resume
+% Roman's: https://github.com/powehihihi/resume
+% License : MIT
+%------------------------
+
+
+  
+
+\documentclass[letterpaper,10pt]{article}
+
+\usepackage{makecell}
+\usepackage[link=off]{phonenumbers}
+\usepackage{ragged2e}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\usepackage[margin=0.3in]{geometry}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.0in}
+\addtolength{\evensidemargin}{-0.0in}
+\addtolength{\textwidth}{0in}
+\addtolength{\topmargin}{10pt}
+\addtolength{\textheight}{0.0in}
+
+\urlstyle{same}
+
+\usepackage{xcolor} % http://ctan.org/pkg/xcolor
+\usepackage{hyperref} % http://ctan.org/pkg/hyperref
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!red,
+  linkbordercolor=red,
+  urlcolor=black!70!black,
+  pdfnewwindow=true
+}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-10pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-7pt}]
+
+%-------------------------
+% Custom commands
+\def \ifempty#1{\def\temp{#1} \ifx\temp\empty }
+
+\newcommand{\resumeItem}[2]{
+  \item\small{
+  	\ifempty{#1}#2\else\textbf{#1}{: #2 \vspace{-2pt}}\fi
+  }
+}
+
+\usepackage[dvipsnames]{xcolor}
+\definecolor{mygray}{gray}{0}
+\usepackage{fancybox}
+
+\usepackage{lmodern}
+\usepackage{tikz}
+
+% Style definition
+\tikzset{rndblock/.style={rounded corners,rectangle,draw,outer sep=0pt}}
+
+% Command Definition
+% 1 optional to customize the aspect, 2 mandatory: text to be framed
+\newcommand{\tframed}[2][]{\tikz[baseline=(h.base)]\node[rndblock,#1] (h) {\color{black}{#2}};}
+
+\newcommand*{\mystrut}{\rule[-0.2\baselineskip]{0pt}{0.8\baselineskip}}
+\newcommand{\skill}[1]{\tframed[lightgray]{\mystrut#1}}
+
+\newcommand{\resumeProjSubheading}[3]{
+  \vspace{-10pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \vspace{2pt}  \\
+      \textbf{#1} & \textcolor{mygray}{\textit{\small #2}} \\
+      {\scriptsize#3}
+    \end{tabular*}\vspace{3pt}
+}
+
+\newcommand{\resumeExpSubheading}[5]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \vspace{2pt} \textbf{#1}  & \textcolor{mygray}{\small #2} \\
+      \textit{#3} & \textcolor{mygray}{\textit{\small #4}} \\
+      {\scriptsize#5}
+    \end{tabular*}\vspace{3pt}
+}
+
+\newcommand{\resumeEducationSubheading}[4]{
+  \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \vspace{2pt} \textbf{#1}  & \textcolor{mygray}{\small #2} \\
+      \textit{#3} & \textcolor{mygray}{\textit{\small #4}} \\
+    \end{tabular*}\vspace{-2pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.2in]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\usepackage{changepage}
+\newcommand{\resumeDesc}[1]{\begin{adjustwidth}{5pt}{0pt}\vspace{-2pt}{#1}\end{adjustwidth}}
+
+\newcommand{\ExternalLink}{
+    \tikz[x=1.2ex, y=1.2ex, baseline=-0.05ex]{
+        \begin{scope}[x=1ex, y=1ex]
+            \clip (-0.1,-0.1) 
+                --++ (-0, 1.2) 
+                --++ (0.6, 0) 
+                --++ (0, -0.6) 
+                --++ (0.6, 0) 
+                --++ (0, -1);
+            \path[draw, 
+                line width = 0.5, 
+                rounded corners=0.5] 
+                (0,0) rectangle (1,1);
+        \end{scope}
+        \path[draw, line width = 0.5] (0.5, 0.5) 
+            -- (1, 1);
+        \path[draw, line width = 0.5] (0.6, 1) 
+            -- (1, 1) -- (1, 0.6);
+        }
+    }
+    
+% \definecolor{Blue1}{HTML}{4D4EDC}
+\newcommand{\MYhref}[3][black]{\href{#2}{\color{#1}{#3}}}
+
+
+
+%----------------------------
+%%%%%%  CV STARTS HERE  %%%%%
+
+\begin{document}
+
+  
+
+%----------HEADING-----------------
+
+\begin{center}\textbf{\Large Roman Polyakov }\end{center}
+\vspace{-12pt}
+\begin{center} \MYhref{mailto:powehi@duck.com }{ \faEnvelope \space powehi@duck.com } \quad  \MYhref{ https://github.com/powehihihi }{ \faGithub \space powehihihi } \quad  \MYhref{ https://t.me/powehihihi }{ \faPaperPlane \space powehihihi } \quad 
+\end{center}
+
+
+  
+
+%-----------SUMMARY-----------------
+
+
+
+  
+
+%-----------EXPERIENCE-----------------
+
+\vspace{-5pt}
+\section{Experience}
+\justifying
+  \resumeSubHeadingListStart
+  
+    
+    
+        
+        \vspace{3pt}
+        \resumeExpSubheading
+          {\MYhref{ https://cloud.ru }{ Cloud.ru (SberCloud) \ExternalLink }}
+          {  }
+          { Software Engineer at Devplatform }
+          { April 2023 - Present }
+          {  \skill{ Golang }  \skill{ PostgreSQL }  \skill{ Kafka }  \skill{ grpc }  }
+          \resumeDesc{
+          \begin{itemize}
+              
+                \item Accelerated the development of platform services by creating and maintaining library for interaction with internal CMDB.
+              
+                \item Developed API management service for simplifying cross-team collaboration.
+              
+                \item Automated customers' interaction with technical support by creating telegram bot. Implemented complex FSM and covered it with tests.
+              
+          \end{itemize}}
+
+    
+      
+          \vspace{-14pt}
+          \resumeExpSubheading
+          { }
+          { }
+          { Software Engineer at DSWorks }
+          { July 2023 - September 2023 }
+          {  \skill{ Golang }  \skill{ TypeScript }  \skill{ GraphQL }  \skill{ Hasura }  \skill{ PostgreSQL }  }
+          \resumeDesc{
+          \begin{itemize}
+              
+                \item Maintained a complex monolithic application with over 200 database migrations.
+              
+                \item Used Hasura GraphQL engine to speed up feature delievery.
+              
+                \item Wrote automated integration tests using database fixtures and a custom testing framework.
+              
+          \end{itemize}}
+
+    
+    
+  
+  \resumeSubHeadingListEnd
+
+
+
+  
+
+%-----------PROJECTS-----------------
+
+\section{Projects}
+  \resumeSubHeadingListStart
+  
+      \resumeProjSubheading
+      {\MYhref{ https://github.com/powehihihi/jobleaf }{ jobleaf \ExternalLink}}{}
+      {  \skill{ Golang }  \skill{ Latex }  }
+          \resumeDesc{
+          \begin{itemize}
+            
+              \item jobleaf is a cli tool that simplifies writing your resume.
+            
+              \item Adapted latex resume for golang template syntax.
+            
+              \item Added support for Windows, Mac and Linux.
+            
+              \item Latex code for this resume is generated.
+            
+          \end{itemize}
+          }
+  
+      \resumeProjSubheading
+      {\MYhref{ https://github.com/powehihihi/enumarr }{ enumarr \ExternalLink}}{}
+      {  \skill{ Golang }  \skill{ AST }  }
+          \resumeDesc{
+          \begin{itemize}
+            
+              \item enumarr is a Stringer-like code generation tool, it generates array of typed constants (enums).
+            
+              \item Implemented abstract syntax tree traversal for finding suitable constants.
+            
+              \item Used enumarr at work for maintaining relevance of state machine tests.
+            
+          \end{itemize}
+          }
+  
+  \resumeSubHeadingListEnd
+
+
+
+  
+
+%-----------EDUCATION-----------------
+
+\section{Education}
+  \resumeSubHeadingListStart
+    
+    \resumeEducationSubheading
+    { \MYhref{ https://msu.ru }{ Moscow State University }}{ Moscow, Russia }
+    { Bachelor of Mathematics and Mechanics }
+    { 2021 - Present }
+      
+    
+  \resumeSubHeadingListEnd
+
+
+
+  
+
+%--------PROGRAMMING SKILLS------------
+
+\section{Skills}
+ \resumeSubHeadingListStart
+ \begin{tabular}{ll}
+ \textbf{Languages:} & \quad Golang, Python, C/C++, Lua, TypeScript \\ 
+ \textbf{Libraries:} & \quad HTMX, Gorm, spf13/cobra \\ 
+ \textbf{Tools:} & \quad PostgreSQL, Hasura, Docker, Neovim, lazygit \\ 
+\end{tabular}
+ \resumeSubHeadingListEnd
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
